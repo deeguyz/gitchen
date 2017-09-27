@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+<div class="bs-component">
+<div class="panel-body title"><h2 class="panel panel-default display-2">Results for: {{ query }}</h2></div>
+<ul class="panel-body">
+{% for item in results.hits %}
+  <li class="panel panel-default">
+    <div class="panel-body">
+      <img src={{item.recipe.image}} alt="foodpic" class="recipe-img">
+      <h1 class="recipe-title"><a href={{item.recipe.url}}>{{item.recipe.label}}</a></h1>
+      <ul>
+        {% for ingredient in item.recipe.ingredientLines %}
+          <li>{{ ingredient }}</li>
+          {% endfor %}
+      </ul>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}

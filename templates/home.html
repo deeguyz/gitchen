@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="panel panel-default">
+<div class="panel-body">
+	<h1>Gitchen</h1>
+	<form action="search" action="POST">
+		<h2>What's in Your Fridge?</h2>
+		<input type='text' name="ingredients">
+		<br/>
+	<button type="submit" class="btn btn-primary btn-raised">Submit</button>
+
+	</form>
+
+	<form action = "upload" method = "POST" enctype = "multipart/form-data">
+		<div class="form-group is-empty is-fileinput">
+              <label class="control-label" for="inputFile2">Select file</label>
+              <input type="file" id="inputFile2" class="form-control" placeholder="Browse for file..." name="file">
+        </div>
+		<button type="submit" class="btn btn-primary btn-raised">Submit</button>
+	</form>
+</div>
+</div>
+{% endblock %}
